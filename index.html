@@ -54,7 +54,7 @@
 
                 <section>
                     <h2>Variables</h2>
-<pre>
+<pre class="fragment">
     <code class="sass">
         $width: 1024px;
 
@@ -152,13 +152,13 @@
  <pre class="fragment">
     <code class="sass">
         @mixin set-size($value) {
-        @if $value == 'monster' { font-size: 10em }
-        @if $value == 'mouse' { font-size: 2em }
-        @else  { font-size: 4em }
+            @if $value == 'monster' { font-size: 10em }
+            @if $value == 'mouse' { font-size: 2em }
+            @else  { font-size: 4em }
         }
 
         h1 {
-        @include set-size('monster');
+            @include set-size('monster');
         }
     </code>
 </pre>
@@ -173,22 +173,22 @@
  <pre class="fragment">
     <code class="sass">
         @each $beer in golden, amber, dark {
-        .#{$beer}-beer-icon {
-        background-image: url('/icons/beers/#{$beer}.png');
-        }
+            .#{$beer}-beer-icon {
+                background-image: url('/icons/beers/#{$beer}.png');
+            }
         }
     </code>
  </pre>
 <pre class="fragment">
     <code class="css">
         .golden-beer-icon {
-        background-image: url('/icons/beers/golden.png');
+            background-image: url('/icons/beers/golden.png');
         }
         .amber-beer-icon {
-        background-image: url('/icons/beers/amber.png');
+            background-image: url('/icons/beers/amber.png');
         }
         .dark-beer-icon {
-        background-image: url('/icons/beers/dark.png');
+            background-image: url('/icons/beers/dark.png');
         }
     </code>
 </pre>
@@ -198,25 +198,25 @@
 <pre class="fragment">
     <code class="sass">
         .error {
-        border: 1px #f00;
-        background-color: #fdd;
+            border: 1px #f00;
+            background-color: #fdd;
         }
         .seriousError {
-        @extend .error;
-        border-width: 3px;
+            @extend .error;
+            border-width: 3px;
         }
     </code>
 </pre>
 <pre class="fragment">
     <code class="css">
         .error {
-        border: 1px #f00;
-        background-color: #fdd;
+            border: 1px #f00;
+            background-color: #fdd;
         }
         .seriousError {
-        border: 1px #f00;
-        background-color: #fdd;
-        border-width: 3px;
+            border: 1px #f00;
+            background-color: #fdd;
+            border-width: 3px;
         }
     </code>
 </pre>
