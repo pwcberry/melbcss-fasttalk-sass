@@ -4,10 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>SASS - Hack CSS like a boss</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="author" content="Peter Berry">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -39,15 +38,236 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
                 <section class="first">
-                    <h1>SASS: Sassy CSS</h1>
-                    <h3>A quick introduction</h3>
+                    <h1>SASS</h1>
+                    <h3>Hack CSS like a boss</h3>
                 </section>
 
+                <section>
+                    <h2>SASS: Introduction</h2>
+                    <ul>
+                        <li class="fragment">Pre-processor</li>
+                        <li class="fragment">Enhances CSS with programming idioms</li>
+                        <li class="fragment">Runs on Ruby</li>
+                        <li class="fragment">Syntactically Awesome StyleSheets</li>
+                    </ul>
+                </section>
 
+                <section>
+                    <h2>Variables</h2>
+<pre>
+    <code class="sass">
+        $width: 1024px;
+
+        .page-content {
+            width: $width;
+
+            .section-header {
+                font-size: 1em;
+            }
+        }
+    </code>
+</pre>
+                </section>
+
+                <section>
+                    <h2>Operators</h2>
+                    <p class="fragment">String concatenator</p>
+<pre class="fragment">
+    <code class="sass">
+        $icon-code: "0030";
+
+        .icon-help {
+            &:after {
+                content: "\u" + $icon-code;
+            }
+        }
+    </code>
+</pre>
+                </section>
+
+                <section>
+                    <h2>Mixins</h2>
+<pre class="fragment">
+    <code class="sass">
+        @mixin border-radius($radius) {
+            -webkit-border-radius: $radius;
+            -moz-border-radius: $radius;
+            -ms-border-radius: $radius;
+            border-radius: $radius;
+        }
+
+        .panel {
+            @include border-radius(3px);
+        }
+    </code>
+</pre>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Maps</h2>
+                    </section>
+                    <section>
+<pre>
+    <code class="sass">
+        $font-stack ($font-family: 'Helvetica, Arial', $font-size: 20px);
+    </code>
+</pre>
+                    </section>
+                    <section>
+<pre>
+    <code class="sass">
+        @mixin set-font($font-family, $font-size) {
+            font-family: $font-family;
+            font-size: $font-size;
+        }
+
+        h1 {
+            @include set-font($font-stack);
+        }
+    </code>
+</pre>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Lists</h2>
+<pre class="fragment">
+    <code class="sass">
+       $panel-shadow (2px 2px 2px rgba(0,0,0,0.2));
+
+       .panel {
+            @include box-shadow($panel-shadow);
+       }
+    </code>
+</pre>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Directives</h2>
+                    </section>
+                    <section>
+                        <h3><code>@if</code></h3>
+ <pre class="fragment">
+    <code class="sass">
+        @mixin set-size($value) {
+        @if $value == 'monster' { font-size: 10em }
+        @if $value == 'mouse' { font-size: 2em }
+        @else  { font-size: 4em }
+        }
+
+        h1 {
+        @include set-size('monster');
+        }
+    </code>
+</pre>
+<pre class="fragment">
+    <code class="css">
+        h1 { font-size: 10em;}
+    </code>
+</pre>
+                    </section>
+                    <section>
+                        <h3><code>@each</code></h3>
+ <pre class="fragment">
+    <code class="sass">
+        @each $beer in golden, amber, dark {
+        .#{$beer}-beer-icon {
+        background-image: url('/icons/beers/#{$beer}.png');
+        }
+        }
+    </code>
+ </pre>
+<pre class="fragment">
+    <code class="css">
+        .golden-beer-icon {
+        background-image: url('/icons/beers/golden.png');
+        }
+        .amber-beer-icon {
+        background-image: url('/icons/beers/amber.png');
+        }
+        .dark-beer-icon {
+        background-image: url('/icons/beers/dark.png');
+        }
+    </code>
+</pre>
+                    </section>
+                    <section>
+                        <h3><code>@extend</code></h3>
+<pre class="fragment">
+    <code class="sass">
+        .error {
+        border: 1px #f00;
+        background-color: #fdd;
+        }
+        .seriousError {
+        @extend .error;
+        border-width: 3px;
+        }
+    </code>
+</pre>
+<pre class="fragment">
+    <code class="css">
+        .error {
+        border: 1px #f00;
+        background-color: #fdd;
+        }
+        .seriousError {
+        border: 1px #f00;
+        background-color: #fdd;
+        border-width: 3px;
+        }
+    </code>
+</pre>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Built-in Functions</h2>
+                    <ul>
+                        <li class="fragment"><code>opacify</code></li>
+                        <li class="fragment"><code>transparentize</code></li>
+                        <li class="fragment"><code>mix</code></li>
+                        <li class="fragment"><code>saturate</code></li>
+                        <li class="fragment"><code>lighten</code></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>SASS is bundled with</h2>
+                    <p class="fragment">Ruby on Rails</p>
+                    <p class="fragment">Jekyll</p>
+                </section>
+
+                <section>
+                    <h2>Compared with LESS</h2>
+                    <ul>
+                        <li class="fragment">LESS doesn't have data types</li>
+                        <li class="fragment">LESS doens't have loops, per se</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Frameworks</h2>
+                    <ul>
+                        <li class="fragment">Compass</li>
+                        <li class="fragment">Bourbon</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>Resources</h1>
+                    <p><a href="http://sass-lang.com">sass-lang.com</a></p>
+                    <p><a href="http://compass-style.org/">Compass</a></p>
+                    <p><a href="http://bourbon.io/">Bourbon</a></p>
+                    <p><a href="http://rubyinstaller.org/">Ruby installer for Windows</a></p>
+                </section>
 
 				<section>
 					<h1>THE END</h1>
-					<h3>@pwcberry</h3>
+					<h3>Twitter: @pwcberry</h3>
+                    <p>http://travelsincode.com/melbcss-fasttalk-sass/</p>
 				</section>
 
 			</div>
