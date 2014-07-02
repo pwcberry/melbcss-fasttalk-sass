@@ -29,6 +29,9 @@
 				document.getElementsByTagName( 'head' )[0].appendChild( link );
 			}
 		</script>
+        <style>
+        .reveal h3 code {text-transform: lowercase;}
+        </style>
 	</head>
 
 	<body>
@@ -47,7 +50,8 @@
                     <ul>
                         <li class="fragment">Pre-processor</li>
                         <li class="fragment">Enhances CSS with programming idioms</li>
-                        <li class="fragment">Runs on Ruby</li>
+                        <li class="fragment">Originally a Ruby Gem</li>
+                        <li class="fragment">Libsass: compiler written in C</li>
                         <li class="fragment">Syntactically Awesome StyleSheets</li>
                     </ul>
                 </section>
@@ -244,7 +248,7 @@
                     <h2>Compared with LESS</h2>
                     <ul>
                         <li class="fragment">LESS doesn't have data types</li>
-                        <li class="fragment">LESS doens't have loops, per se</li>
+                        <li class="fragment">LESS doens't have loops, per se (recursion)</li>
                     </ul>
                 </section>
 
@@ -257,15 +261,28 @@
                 </section>
 
                 <section>
+                    <h2>Front-End Dev Tools</h2>
+                    <p>On Node.JS:</p>
+                    <ul>
+                    <li class="fragment"><a href="https://www.npmjs.org/package/grunt-contrib-sass">Grunt JS: grunt-contrib-sass (Ruby)</a></li>
+                    <li class="fragment"><a href="https://www.npmjs.org/package/grunt-sass">Grunt JS: grunt-sass (node-sass)</a></li>
+                    <li class="fragment"><a href="https://www.npmjs.org/package/gulp-ruby-sass/">Gulp JS: gulp-ruby-sass</a></li>
+                    <li class="fragment"><a href="https://www.npmjs.org/package/gulp-sass/">Gulp JS: gulp-sass (node-sass)</a></li>
+                    <li class="fragment"><a href="https://www.npmjs.org/package/node-sass">node-sass (libsass wrapper)</a></li>
+                </ul>
+                </section>
+
+                <section>
                     <h1>Resources</h1>
                     <p><a href="http://sass-lang.com">sass-lang.com</a></p>
                     <p><a href="http://compass-style.org/">Compass</a></p>
                     <p><a href="http://bourbon.io/">Bourbon</a></p>
+                    <p><a href="http://libsass.org/">libsass</a></p>
                     <p><a href="http://rubyinstaller.org/">Ruby installer for Windows</a></p>
                 </section>
 
 				<section>
-					<h1>THE END</h1>
+					<h1>Thanks!</h1>
 					<h3>Twitter: @pwcberry</h3>
                     <p>http://travelsincode.com/melbcss-fasttalk-sass/</p>
 				</section>
